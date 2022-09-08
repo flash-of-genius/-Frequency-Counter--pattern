@@ -16,4 +16,18 @@ function sameSquared(firstArr, secondArr) {
   if (firstArr.length !== secondArr.length) {
     return false;
   }
+  // We need to keep track of all values in at least one of the arrays. To do this, and to avoid a nested loop, we can store these values in a hash table (object). I’ll call mine lookup.
+  const lookup = {};
+
+  // Using a for of loop, we iterate through the firstArr. Inside of the for of block, we assign the key to the result of value * value.
+
+  // The value in this key/value pair will be a frequency counter that reflects how many times a specific value is “seen” in the firstArr.
+
+  // First, we check if lookup contains an entry for value * value, if it does, we add 1 to it. If it does not, we assign the value to 0 and then add 1.
+
+  for (value of firstArr) {
+    lookup[value * value] = (lookup[value * value] || 0) + 1;
+  }
 }
+
+console.log(sameSquared([1, 2, 3], [4, 1, 9]));
