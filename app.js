@@ -28,6 +28,17 @@ function sameSquared(firstArr, secondArr) {
   for (value of firstArr) {
     lookup[value * value] = (lookup[value * value] || 0) + 1;
   }
+
+  // We start by creating another for of loop. On the first line inside of our new for of block, we write a conditional statement to check if the current value from our secondArr is not inside of our lookup. If it is not, we stop looping and return false.
+
+  // If the value from the secondArr is in our lookup, we want to decrement the value of that entry. We can do so by using the -= assignment operator.
+
+  for (secondValue of secondArr) {
+    if (!lookup[secondValue]) {
+      return false;
+    }
+    lookup[secondValue] -= 1;
+  }
 }
 
 console.log(sameSquared([1, 2, 3], [4, 1, 9]));
