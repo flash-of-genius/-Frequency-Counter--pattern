@@ -39,6 +39,8 @@ function sameSquared(firstArr, secondArr) {
     }
     lookup[secondValue] -= 1;
   }
+  // If we finish iterating through the secondArr without returning false, that means that our firstArr contains all values that are in a squared state in the secondArr. Therefore, we return true outside of for of loop.
+  return true;
 }
 
 console.log(sameSquared([1, 2, 3], [4, 1, 9]));
